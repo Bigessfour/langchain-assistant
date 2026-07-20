@@ -1,0 +1,14 @@
+# Core LangChain + AWS Bedrock (Steps 1–7)
+langchain-aws>=0.1.0
+langchain-core>=0.1.0
+langchain>=0.1.0
+boto3>=1.28.0
+botocore[crt]>=1.28.0
+python-dotenv>=1.0.0
+
+# Web UI (Step 11)
+streamlit>=1.28.0
+
+# Dev / test
+pytest>=7.0.0
+flake8>=6.0.0
