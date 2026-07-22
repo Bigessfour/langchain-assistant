@@ -1,23 +1,61 @@
-from src.chains import chat, summarize
+from src.chains import (
+    generate_and_evaluate,
+    research_pipeline,
+    summarize_project_files,
+)
+from src.memory import chat_with_memory, clear_session
+from src.tools import calculator, get_time, search_files, word_counter
 
 
-def main():
-    print("Testing Multilingual Assistant")
-    print("=" * 40)
+def test_chains():
+    print("=" * 50)
+    print("TESTING CHAINS")
+    print("=" * 50)
 
-    response = chat("English", "What is the capital of France?")
-    print(f"English: {response}\n")
+    print("\n--- Simple Chain ---")
+    result = generate_and_evaluate("mobile app ideas")
+    print(f"Result: {result}")
 
-    response = chat("Spanish", "What is the capital of France?")
-    print(f"Spanish: {response}\n")
+    print("\n--- Research Pipeline ---")
+    result = research_pipeline("renewable energy")
+    print(f"Research: {result['research'][:100]}...")
+    print(f"Outline: {result['outline'][:100]}...")
+    print(f"Summary: {result['summary'][:100]}...")
 
-    text = (
-        "LangChain is a framework for developing applications "
-        "powered by language models."
-    )
-    summary = summarize(text, "brief")
-    print(f"Summary: {summary}")
+    print("\n--- Tool-result chain (FileSearch → LLM) ---")
+    combined = summarize_project_files("*.py")
+    print(f"Pattern: {combined['pattern']}")
+    print(f"Tool result (first 300 chars):\n{combined['tool_result'][:300]}...")
+    print(f"Summary:\n{combined['summary']}")
+
+
+def test_memory():
+    print("\n" + "=" * 50)
+    print("TESTING MEMORY")
+    print("=" * 50)
+
+    clear_session("demo")
+
+    print("\n--- Conversation ---")
+    response1 = chat_with_memory("Hi, my name is Alice", "demo")
+    print(f"Bot: {response1}")
+
+    response2 = chat_with_memory("What's my name?", "demo")
+    print(f"Bot: {response2}")
+
+
+def test_tools():
+    print("\n" + "=" * 50)
+    print("TESTING TOOLS")
+    print("=" * 50)
+
+    print(f"\nCalculator: {calculator('25 * 4')}")
+    print(f"Time: {get_time('long')}")
+    print(f"Words: {word_counter('This is a test sentence')}")
+    print(f"\nFile search (*.py):\n{search_files('*.py')}")
 
 
 if __name__ == "__main__":
-    main()
+    test_tools()      # Test tools first (no AWS needed)
+    test_chains()     # Then chains
+    test_memory()     # Then memory

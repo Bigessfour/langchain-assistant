@@ -1,0 +1,10 @@
+# 04-memory-creation.log
+# status: PASS
+# captured: 2026-07-21 23:18:58 UTC
+
+## Memory creation same object
+
+first call id:  4427225008
+second call id: 4427225008
+same object:    True
+message count:  0

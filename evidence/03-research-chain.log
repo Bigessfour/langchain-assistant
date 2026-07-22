@@ -1,0 +1,37 @@
+# 03-research-chain.log
+# status: PASS
+# captured: 2026-07-21 23:07:28 UTC
+
+## Research chain research_pipeline
+
+Running research_pipeline('renewable energy')...
+/Users/stephenmckitrick/AICO-ECHO/langchain-assistant/src/chains.py:77: LangChainDeprecationWarning: The method `Chain.__call__` was deprecated in langchain-classic 0.1.0 and will be removed in 2.0.0. Use `invoke` instead.
+  return chain({"topic": topic})
+
+
+[1m> Entering new SequentialChain chain...[0m
+
+[1m> Finished chain.[0m
+
+=== KEYS ===
+['outline', 'research', 'summary', 'topic']
+
+--- research (1251 chars) ---
+1. Renewable energy sources accounted for over 70% of all new power capacity added globally in 2020, with wind and solar leading the way. This marks a significant shift towards clean energy, as these sources continue to become more cost-effective and efficient, making them more competitive with traditional fossil fuels.
+
+2. The use of renewable energy can significantly reduce greenhouse gas emissions, helping to combat climate change. According to the International Energy Agency (IEA), transitio
+
+--- outline (2042 chars) ---
+### Outline: The Importance and Potential of Renewable Energy
+
+**1. Dominance and Growth of Renewable Energy Sources**
+
+- **Significant Increase in New Power Capacity:**
+  - In 2020, renewable energy sources like wind and solar accounted for over 70% of all new power capacity added globally.
+  - This shift indicates a notable transition towards clean energy, driven by the increasing cost-effectiveness and efficiency of renewable technologies.
+  
+- **Competitiveness with Fossil Fuels:**
+  - As wi
+
+--- summary (1322 chars) ---
+The dominance and growth of renewable energy sources reflect a significant global shift towards cleaner power. In 2020, renewable sources such as wind and solar accounted for over 70% of new power capacity added worldwide. This surge underscores a growing preference for sustainable energy, primarily due to the rising cost-effectiveness and efficiency of renewable technologies. As these clean energy sources become more competitive with traditional fossil fuels, their adoption is reshaping the glo

@@ -1,0 +1,15 @@
+# 06-memory-chatbot.log
+# status: PASS
+# captured: 2026-07-21 23:07:29 UTC
+
+## Memory chatbot remembers name
+
+You: Hi, my name is Alice
+/Users/stephenmckitrick/AICO-ECHO/langchain-assistant/src/memory.py:47: LangChainDeprecationWarning: RunnableWithMessageHistory is deprecated. Use LangGraph's built-in persistence instead.
+  chatbot = build_memory_chatbot()
+Bot: Hello, Alice! It's nice to meet you. How can I assist you today? If you have any questions or need help with something, feel free to let me know!
+
+You: What's my name?
+/Users/stephenmckitrick/AICO-ECHO/langchain-assistant/src/memory.py:47: LangChainDeprecationWarning: RunnableWithMessageHistory is deprecated. Use LangGraph's built-in persistence instead.
+  chatbot = build_memory_chatbot()
+Bot: Your name is Alice. If you ever need to remember or have any questions, feel free to ask! How can I assist you today, Alice?

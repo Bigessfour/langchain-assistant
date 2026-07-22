@@ -32,3 +32,5 @@ jobs:
           echo "## Test Results" >> $GITHUB_STEP_SUMMARY
           echo "Python: ${{ matrix.python-version }}" >> $GITHUB_STEP_SUMMARY
           echo "Status: Passed" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Modules tested: prompts, chains, memory, tools" >> $GITHUB_STEP_SUMMARY

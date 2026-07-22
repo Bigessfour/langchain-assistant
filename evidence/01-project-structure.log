@@ -1,0 +1,21 @@
+# 01-project-structure.log
+# status: PASS
+# captured: 2026-07-21 23:07:11 UTC
+
+## Project structure (ls src/)
+
+$ ls -la src/
+total 40
+drwxr-xr-x@  9 stephenmckitrick  staff   288 Jul 21 16:45 .
+drwxr-xr-x@ 19 stephenmckitrick  staff   608 Jul 21 17:07 ..
+-rw-r--r--@  1 stephenmckitrick  staff     0 Jul 20 15:47 __init__.py
+drwxr-xr-x@  8 stephenmckitrick  staff   256 Jul 21 17:00 __pycache__
+-rw-r--r--@  1 stephenmckitrick  staff  2375 Jul 21 17:00 chains.py
+-rw-r--r--@  1 stephenmckitrick  staff   664 Jul 20 17:11 client.py
+-rw-r--r--@  1 stephenmckitrick  staff  1511 Jul 21 17:00 memory.py
+-rw-r--r--@  1 stephenmckitrick  staff  1048 Jul 20 17:11 prompts.py
+-rw-r--r--@  1 stephenmckitrick  staff  1567 Jul 21 17:00 tools.py
+
+exit_code: 0
+
+OK: chains.py, memory.py, tools.py present alongside Day 1 files.

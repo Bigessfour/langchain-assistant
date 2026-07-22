@@ -1,50 +1,46 @@
 """Lab compatibility wrapper — challenge code lives in src/."""
 
-from src.chains import chat as my_chatbot
+from src.memory import chat_with_memory, clear_session
 
 
 def test_chatbot():
-    """Run multilingual test cases from the original lab."""
+    """Run sample chat turns with memory (Day 2)."""
+    clear_session("lab-demo")
     test_cases = [
-        ("English", "Which are better dogs, Chihuahuas or Bulldogs?"),
-        ("Spanish", "Explícame qué es la inteligencia artificial"),
-        ("French", "Raconte-moi une blague"),
-        ("English", "Write a haiku about programming"),
+        "Hi, my name is Alice",
+        "What's my name?",
+        "Write a haiku about programming",
     ]
 
-    print("Testing Multilingual Chatbot")
+    print("Testing Memory Chatbot")
     print("=" * 40)
 
-    for language, question in test_cases:
-        print(f"\nLanguage: {language}")
-        print(f"Question: {question}")
+    for message in test_cases:
+        print(f"\nYou: {message}")
         try:
-            response = my_chatbot(language, question)
-            print(f"Response: {response}")
+            response = chat_with_memory(message, "lab-demo")
+            print(f"Bot: {response}")
         except Exception as e:
             print(f"Error: {str(e)}")
         print("-" * 40)
 
 
 def interactive_mode():
-    """Interactive chatbot session."""
-    print("Interactive Chatbot Mode")
+    """Interactive chatbot session with memory."""
+    print("Interactive Memory Chatbot Mode")
     print("Type 'quit' to exit")
     print("=" * 30)
 
-    while True:
-        language = input(
-            "\nEnter language (English/Spanish/French/etc.): "
-        ).strip()
-        if language.lower() == "quit":
-            break
+    session_id = "lab-interactive"
+    clear_session(session_id)
 
+    while True:
         user_input = input("Your message: ").strip()
         if user_input.lower() == "quit":
             break
 
         try:
-            response = my_chatbot(language, user_input)
+            response = chat_with_memory(user_input, session_id)
             print(f"Bot: {response}")
         except Exception as e:
             print(f"Error: {str(e)}")

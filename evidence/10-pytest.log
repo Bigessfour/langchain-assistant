@@ -1,0 +1,44 @@
+# 10-pytest.log
+# status: PASS
+# captured: 2026-07-21 23:18:58 UTC
+
+## Unit tests pytest tests/ -v
+
+$ /Users/stephenmckitrick/AICO-ECHO/langchain-assistant/venv/bin/python -m pytest tests/ -v --tb=short
+============================= test session starts ==============================
+platform darwin -- Python 3.14.5, pytest-9.1.1, pluggy-1.6.0 -- /Users/stephenmckitrick/AICO-ECHO/langchain-assistant/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/stephenmckitrick/AICO-ECHO/langchain-assistant
+plugins: langsmith-0.10.9, anyio-4.14.2
+collecting ... collected 26 items
+
+tests/test_chains.py::test_simple_chain_has_two_steps PASSED             [  3%]
+tests/test_chains.py::test_research_chain_has_three_steps PASSED         [  7%]
+tests/test_chains.py::test_generate_and_evaluate_exists PASSED           [ 11%]
+tests/test_chains.py::test_research_pipeline_exists PASSED               [ 15%]
+tests/test_memory.py::test_get_session_history_creates_new PASSED        [ 19%]
+tests/test_memory.py::test_get_session_history_returns_same PASSED       [ 23%]
+tests/test_memory.py::test_different_sessions_separate PASSED            [ 26%]
+tests/test_memory.py::test_clear_session PASSED                          [ 30%]
+tests/test_memory.py::test_build_memory_chatbot_exists PASSED            [ 34%]
+tests/test_memory.py::test_session_uses_limited_history PASSED           [ 38%]
+tests/test_memory.py::test_memory_keeps_only_last_n_messages PASSED      [ 42%]
+tests/test_memory.py::test_trim_when_max_messages_lowered PASSED         [ 46%]
+tests/test_prompts.py::test_assistant_prompt_formats PASSED              [ 50%]
+tests/test_prompts.py::test_summarizer_prompt_formats PASSED             [ 53%]
+tests/test_prompts.py::test_get_prompt_by_name_assistant PASSED          [ 57%]
+tests/test_prompts.py::test_get_prompt_by_name_summarizer PASSED         [ 61%]
+tests/test_prompts.py::test_get_prompt_by_name_invalid PASSED            [ 65%]
+tests/test_tools.py::test_calculator_addition PASSED                     [ 69%]
+tests/test_tools.py::test_calculator_multiplication PASSED               [ 73%]
+tests/test_tools.py::test_calculator_rejects_invalid PASSED              [ 76%]
+tests/test_tools.py::test_get_time_returns_string PASSED                 [ 80%]
+tests/test_tools.py::test_get_time_formats PASSED                        [ 84%]
+tests/test_tools.py::test_word_counter_basic PASSED                      [ 88%]
+tests/test_tools.py::test_word_counter_characters PASSED                 [ 92%]
+tests/test_tools.py::test_get_all_tools_returns_list PASSED              [ 96%]
+tests/test_tools.py::test_tools_have_names PASSED                        [100%]
+
+============================== 26 passed in 0.17s ==============================
+
+exit_code: 0
