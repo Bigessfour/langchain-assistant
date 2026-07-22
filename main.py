@@ -1,6 +1,10 @@
-from src.chains import generate_and_evaluate, research_pipeline
+from src.chains import (
+    generate_and_evaluate,
+    research_pipeline,
+    summarize_project_files,
+)
 from src.memory import chat_with_memory, clear_session
-from src.tools import calculator, get_time, word_counter
+from src.tools import calculator, get_time, search_files, word_counter
 
 
 def test_chains():
@@ -17,6 +21,12 @@ def test_chains():
     print(f"Research: {result['research'][:100]}...")
     print(f"Outline: {result['outline'][:100]}...")
     print(f"Summary: {result['summary'][:100]}...")
+
+    print("\n--- Tool-result chain (FileSearch → LLM) ---")
+    combined = summarize_project_files("*.py")
+    print(f"Pattern: {combined['pattern']}")
+    print(f"Tool result (first 300 chars):\n{combined['tool_result'][:300]}...")
+    print(f"Summary:\n{combined['summary']}")
 
 
 def test_memory():
@@ -42,6 +52,7 @@ def test_tools():
     print(f"\nCalculator: {calculator('25 * 4')}")
     print(f"Time: {get_time('long')}")
     print(f"Words: {word_counter('This is a test sentence')}")
+    print(f"\nFile search (*.py):\n{search_files('*.py')}")
 
 
 if __name__ == "__main__":

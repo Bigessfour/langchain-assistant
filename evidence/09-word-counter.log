@@ -1,0 +1,8 @@
+# 09-word-counter.log
+# status: PASS
+# captured: 2026-07-21 23:07:11 UTC
+
+## Word counter word_counter("hello world")
+
+word_counter("hello world") => 'Words: 2, Characters: 11'
+expected: "Words: 2, Characters: 11"

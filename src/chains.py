@@ -3,6 +3,7 @@ from langchain_classic.chains.sequential import SimpleSequentialChain, Sequentia
 from langchain_core.prompts import PromptTemplate
 
 from src.client import create_client, create_llm
+from src.tools import search_files
 
 
 def build_simple_chain(llm):
@@ -75,3 +76,46 @@ def research_pipeline(topic):
     llm = create_llm(client)
     chain = build_research_chain(llm)
     return chain({"topic": topic})
+
+
+def build_tool_result_chain(llm):
+    """Build a chain whose prompt is filled from a prior tool result."""
+    prompt = PromptTemplate(
+        input_variables=["pattern", "tool_result"],
+        template=(
+            "You are summarizing a software project from a real file listing.\n"
+            "Search pattern: {pattern}\n\n"
+            "Tool output (FileSearch):\n{tool_result}\n\n"
+            "Write 3-5 sentences describing the project layout. "
+            "Only refer to paths that appear in the tool output. "
+            "Do not invent files."
+        ),
+    )
+    return LLMChain(llm=llm, prompt=prompt, verbose=True)
+
+
+def collect_file_search_context(pattern="*.py"):
+    """Run the FileSearch tool only (no LLM). Useful for tests and demos."""
+    return search_files(pattern)
+
+
+def summarize_project_files(pattern="*.py"):
+    """Stretch: run FileSearch, then chain an LLM summary over that output.
+
+    Returns:
+        dict with pattern, tool_result (from the tool), and summary (from the LLM).
+    """
+    tool_result = collect_file_search_context(pattern)
+    client = create_client()
+    llm = create_llm(client)
+    chain = build_tool_result_chain(llm)
+    result = chain.invoke({"pattern": pattern, "tool_result": tool_result})
+    if isinstance(result, dict):
+        summary = result.get("text", str(result))
+    else:
+        summary = str(result)
+    return {
+        "pattern": pattern,
+        "tool_result": tool_result,
+        "summary": summary,
+    }
