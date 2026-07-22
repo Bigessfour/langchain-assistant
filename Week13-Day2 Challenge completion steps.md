@@ -7,9 +7,9 @@ Streamlit → **Special Agent** tab (or Tools → SpyCodenameGenerator). Enter y
 
 Brief: `aico-challenges-w13/day-2-composability-chains-memory-and-tools/challenge-1-extend-your-ai-application-with-chains-memory-and-tools.md`
 
-App repo: `/Users/stephenmckitrick/AICO-ECHO/langchain-assistant` on branch `w13d2-challenges`  
-Hub repo: `/Users/stephenmckitrick/AICO-ECHO/aico-challenges-w13/aico-challenges-w13` on branch `w13-challenges`  
-App PR: https://github.com/Bigessfour/langchain-assistant/pull/1  
+App repo: `/Users/stephenmckitrick/AICO-ECHO/langchain-assistant` on branch `w13d2-challenges`
+Hub repo: `/Users/stephenmckitrick/AICO-ECHO/aico-challenges-w13/aico-challenges-w13` on branch `w13-challenges`
+App PR: https://github.com/Bigessfour/langchain-assistant/pull/1
 Hub PR: https://github.com/codeplatoon-devops/aico-challenges-w13/pull/1
 
 ---
@@ -261,6 +261,9 @@ Try: name `Stephen McKitrick`, birthdate `1985-07-21`, color `blue` → expect s
   (mirrored under the challenges hub `submissions/Bigessfour/evidence/screenshots/`)
 - Shows Special Agent forge → `COBALT COBRA-21` / `SM-85` for the McKitrick dossier.
 - Filed under: helping the country against the bad guys.
+- Chat path (agent + tool): `evidence/screenshots/24-streamlit-special-agent-chat-codename.png`
+  - Asked Q to assign a codename (name / birthdate `10/23/1966` / purple).
+  - Reply: `VIOLET SHARK-23`, callsign `SM-66`, caption **Tools used: SpyCodenameGenerator**.
 
 ---
 

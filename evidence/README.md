@@ -42,5 +42,8 @@ Logs are written here and mirrored to the challenges hub submission folder:
 | 21  | Streamlit JSON persist UI               | `screenshots/21-streamlit-json-persistence-ui.png`         |
 | 22  | Streamlit JSON save/load instructions   | `screenshots/22-streamlit-json-save-load-instructions.png` |
 | 23  | Special Agent / Q Branch spy codename   | `screenshots/23-streamlit-special-agent-spy-codename.pdf`  |
+| 24  | Special Agent chat → SpyCodenameGenerator | `screenshots/24-streamlit-special-agent-chat-codename.png` |
 
 **23 — heroic Q Branch dossier:** Streamlit **Special Agent** tab forging a CLASSIFIED callsign from name + birthdate + favorite color (`COBALT COBRA-21` / `SM-85`). Our contribution to the ongoing struggle against the bad guys.
+
+**24 — chat path:** Brief Q (agent + tool + memory) assigned `VIOLET SHARK-23` / callsign `SM-66` via **Tools used: SpyCodenameGenerator** (not invented by the LLM).
